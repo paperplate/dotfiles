@@ -5,7 +5,7 @@ local config = {}
 config.enable_tab_bar = false
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_prog = { "pwsh.exe", "-NoLogo" }
+	config.default_prog = { "powershell.exe", "-NoLogo" }
 end
 
 -- Key bindings
