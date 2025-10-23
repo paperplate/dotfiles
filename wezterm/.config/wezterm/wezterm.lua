@@ -18,12 +18,12 @@ config.keys = {
  {
   key = "y",
   mods = "CTRL",
-  action = westerm.action.CopyTo "ClipboardAndPrimarySelection", 
+  action = wezterm.action.CopyTo "ClipboardAndPrimarySelection", 
  }, 
  {
   key = "p",
   mods = "CTRL",
-  action = westerm.action.PasteFrom "Clipboard"
+  action = wezterm.action.PasteFrom "Clipboard"
  }, 
 }
 
