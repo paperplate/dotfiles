@@ -15,6 +15,16 @@ config.keys = {
 		mods = "CTRL",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
+ {
+  key = "y",
+  mods = "CTRL",
+  action = western.action.CopyTo "ClipboardAndPrimarySelection", 
+ }, 
+ {
+  key = "p",
+  mods = "CTRL",
+  action = western.action.PasteFrom "Clipboard"
+ }, 
 }
 
 return config
