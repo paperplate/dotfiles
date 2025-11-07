@@ -24,7 +24,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-#eval "$(oh-my-posh init bash)"
 eval "$(starship init bash)"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
