@@ -12,3 +12,9 @@ source ~/.local/share/omarchy/default/bash/rc
 
 # Created by `pipx` on 2025-11-07 00:30:18
 export PATH="$PATH:/home/sean/.local/bin"
+
+# add vulkan sdk setup
+source ~/dev/vulkansdk/default/setup-env.sh
+
+# add personal utility functions
+source ~/dev/scripts/utils.sh
