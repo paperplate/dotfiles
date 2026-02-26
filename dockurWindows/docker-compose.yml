@@ -1,0 +1,27 @@
+services:
+  windows:
+    image: dockurr/windows
+    container_name: omarchy-windows
+    environment:
+      VERSION: "11"
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
+      DISK_SIZE: "64G"
+      USERNAME: "docker"
+      PASSWORD: "admin"
+      ARGUMENTS: "-device usb-host,vendorid=0x096e,productid=0x0705"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+      - /dev/bus/usb
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    volumes:
+      - /home/sean/.windows:/storage
+      - /home/sean/Windows:/shared
+    restart: always
+    stop_grace_period: 2m

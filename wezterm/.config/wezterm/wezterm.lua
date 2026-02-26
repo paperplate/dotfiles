@@ -113,7 +113,7 @@ config.keys = {
 		action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }),
 	},
 	{ key = "v", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
-	{ key = "w", mods = "CTRL", action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "w", mods = "CTRL", action = act.CloseCurrentPane({ confirm = true }) },
 	{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = true }) },
 	{ key = "x", mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
 	{ key = "y", mods = "CTRL", action = act.CopyTo("ClipboardAndPrimarySelection") },
