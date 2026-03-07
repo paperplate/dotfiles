@@ -13,6 +13,10 @@ source ~/.local/share/omarchy/default/bash/rc
 # Created by `pipx` on 2025-11-07 00:30:18
 export PATH="$PATH:/home/sean/.local/bin"
 
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx5"
+
 # add vulkan sdk setup
 source ~/dev/vulkansdk/default/setup-env.sh
 
