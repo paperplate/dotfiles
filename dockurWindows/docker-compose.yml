@@ -9,11 +9,15 @@ services:
       DISK_SIZE: "64G"
       USERNAME: "docker"
       PASSWORD: "admin"
-      ARGUMENTS: "-device usb-host,vendorid=0x096e,productid=0x0705"
+      # fob
+      #ARGUMENTS: "-device usb-host,vendorid=0x096e,productid=0x0705"
+      # mig
+      ARGUMENTS: "-device usb-host,vendorid=0x05e3,productid=0x0751"
     devices:
       - /dev/kvm
       - /dev/net/tun
       - /dev/bus/usb
+    privileged: true
     cap_add:
       - NET_ADMIN
     ports:
