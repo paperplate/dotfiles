@@ -74,7 +74,17 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "omarchy-launch-or-focus-tui btop"
+    "on-click": "omarchy-launch-or-focus-tui btop",
+    "tooltip": true,
+    "tooltip-format": "CPU Temp: {temperatureC}°C\nAvg Load: {avg_load}"
+  },
+  "custom/gpu": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "interval": 5,
+    "format": "󰍛",
+    "tooltip": true,
+    "tooltip-format": "GPU Temp: {temp}°C",
+    "return-type": ""
   },
   "clock": {
     "format": "{:L%A %H:%M}",

@@ -24,18 +24,3 @@ source ~/dev/vulkansdk/default/setup-env.sh
 source ~/dev/scripts/utils.sh
 
 source <(jj util completion bash)
-
-# setup for esp32 environment
-esp() {
-  git config --global --get-all safe.directory |
-    grep -q '^/opt/esp-idf$' ||
-    git config --global --add safe.directory /opt/esp-idf
-  source /opt/esp-idf/export.sh
-  alias idf=idf.py
-  eval "$(env LANG=en \
-    _IDF.PY_COMPLETE=bash_source \
-    idf.py |
-    sed -e 's,$1,$1.py,' \
-      -e 's,idf\.py$,idf,' \
-      -e 's,_idfpy_completion,_idfpy_completion2,')"
-}

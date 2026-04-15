@@ -1,0 +1,10 @@
+amd-container-toolkit
+docker-model
+esp-idf
+hyprmode
+hyprmon-bin
+libretro-fbneo-git
+retroarch-assets-git
+rgbpc
+xpadneo-dkms
+zen-browser
