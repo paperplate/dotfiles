@@ -19,10 +19,14 @@
   "modules-right": [
     "group/tray-expander",
     "custom/fcitx5",
-    "omarchy-launch-bluetoothth",
+    "omarchy-launch-bluetooth",
     "network",
     "pulseaudio",
-    "cpu",
+    "bluetooth",
+    //"cpu",
+    "custom/cpu",
+    "custom/igpu",
+    "custom/gpu",
     "battery"
   ],
   "custom/fcitx5": {
@@ -71,20 +75,33 @@
     "signal": 7,
     "interval": 21600
   },
-  "cpu": {
-    "interval": 5,
-    "format": "󰍛",
+  //"cpu": {
+  //"interval": 5,
+  //"format": "󰍛 {usage}%",
+  //"tooltip-format": "CPU Temp: {temperatureC}°C\nAvg Load: {avg_load}",
+  //"on-click": "omarchy-launch-or-focus-tui btop"
+  //},
+  "custom/cpu": {
+    "exec": "~/.config/waybar/cpu.sh",
+    "return-type": "json",
+    "format": " {}%",
     "on-click": "omarchy-launch-or-focus-tui btop",
-    "tooltip": true,
-    "tooltip-format": "CPU Temp: {temperatureC}°C\nAvg Load: {avg_load}"
+    "interval": 5,
+    "tooltip": true
+  },
+  "custom/igpu": {
+    "exec": "~/.config/waybar/amdgpu.sh",
+    "return-type": "json",
+    "format": "󰹑 {}%",
+    "interval": 5,
+    "tooltip": true
   },
   "custom/gpu": {
-    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk -F', ' '{print \"{\\\"text\\\": \\\"\"$1\"\\\", \\\"tooltip\\\": \\\"GPU Temp: \"$2\"°C\\\"}\"}'",
+    "return-type": "json",
+    "format": "󰢮 {}%",
     "interval": 5,
-    "format": "󰍛",
-    "tooltip": true,
-    "tooltip-format": "GPU Temp: {temp}°C",
-    "return-type": ""
+    "tooltip": true
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -104,8 +121,8 @@
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+    "tooltip-format-ethernet": "Connected",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
@@ -115,8 +132,7 @@
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
-    // a-la-carchy-original-plugged: ""
-    "format-plugged": "󰂅",
+    "format-plugged": "",
     "format-icons": {
       "charging": [
         "󰢜",

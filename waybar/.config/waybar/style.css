@@ -34,6 +34,9 @@
 #battery,
 #pulseaudio,
 #custom-omarchy,
+#custom-igpu,
+#custom-gpu,
+#custom-cpu,
 
 #custom-update {
   min-width: 12px;
