@@ -24,3 +24,6 @@ source ~/dev/vulkansdk/default/setup-env.sh
 source ~/dev/scripts/utils.sh
 
 source <(jj util completion bash)
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"

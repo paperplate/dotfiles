@@ -28,4 +28,9 @@ return {
       return opts
     end,
   },
+
+  {
+    "smnatale/coderabbit.nvim",
+    opts = {},
+  },
 }
