@@ -27,3 +27,7 @@ source <(jj util completion bash)
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/sean/.local/bin:$PATH"

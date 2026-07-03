@@ -17,6 +17,7 @@ services:
       - /dev/kvm
       - /dev/net/tun
       - /dev/bus/usb
+      - /dev/video0 #video1 is laptop screen
     privileged: true
     cap_add:
       - NET_ADMIN
